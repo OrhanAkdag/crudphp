@@ -50,10 +50,10 @@ function valideForm(){
         $errors[] = 'Veuillez saisir le nom de la planète';
     }
     if(empty($_POST['status'])){
-        $errors[] = 'Veuillez le status de la planète';
+        $errors[] = 'Veuillez saisir le status de la planète';
     }
     if(empty($_POST['terrain'])){
-        $errors[] = 'Veuillez le terrain de la planète';
+        $errors[] = 'Veuillez saisir le terrain de la planète';
     }
     if(empty($_POST['allegiance'])){
         if(!in_array($_POST['allegiance'], getAllegiances())){
@@ -61,7 +61,7 @@ function valideForm(){
         }
     }
     if(empty($_POST['keyfact'])){
-        $errors[] = 'Veuillez entrer la key fact de la planète';
+        $errors[] = 'Veuillez saisir la key fact de la planète';
     }
     return $errors;
 }

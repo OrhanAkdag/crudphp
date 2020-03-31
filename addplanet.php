@@ -26,6 +26,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST'){
             <input type="text" name="terrain" class="form-control" placeholder="Terrain">
         </div>
         <div class="form-group">
+            <label>Allegiance</label>
             <select name="allegiance" class="form-control" placeholder="Allegiance">
             <?php
                 foreach(getAllegiances() as $allegiances){

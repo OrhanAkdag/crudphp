@@ -32,7 +32,29 @@ function getAllegiances() {
     ];
 }
 
+function getPlanet($pdo,$id)
+{
+    $res = $pdo->prepare('SELECT * FROM planets WHERE id = :id');
+    $res->execute(['id'=> $id]);
+    return $res->fetch();
+}
+
+function addBdd($pdo, $imageUrl){
+    $req = $pdo->prepare(
+        'INSERT INTO planets(name, status, terrain , allegiance, key_fact, image)
+    VALUES(:name, :status, :terrain, :allegiance, :key_fact, :image)');
+    $req->execute([
+        'name' => $_POST['name'],
+        'status' => $_POST['status'],
+        'terrain' => $_POST['terrain'],
+        'allegiance' => $_POST['allegiance'],
+        'key_fact' => $_POST['keyfact'],
+        'image' => $imageUrl
+    ]);
+}
+
 function valideForm(){
+    $errors = [];
     $allowedExtension = ['image/png','image/jpeg','image/gif'];
     if(in_array($_FILES['image']['type'],$allowedExtension)){
         if($_FILES['image']['size'] < 800000){
@@ -64,5 +86,5 @@ function valideForm(){
     if(empty($_POST['keyfact'])){
         $errors[] = 'Veuillez saisir la key fact de la planète';
     }
-    return $errors;
+    return ['errors'=>$errors, 'image'=>$imageUrl];
 }

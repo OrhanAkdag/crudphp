@@ -33,7 +33,7 @@ function getAllegiances() {
 }
 
 function valideForm(){
-    $allowedExtension = ['image/png','image/png','image/gif'];
+    $allowedExtension = ['image/png','image/jpeg','image/gif'];
     if(in_array($_FILES['image']['type'],$allowedExtension)){
         if($_FILES['image']['size'] < 800000){
             $extension = explode('/', $_FILES['image']['type'])[1];

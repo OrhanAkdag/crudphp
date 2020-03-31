@@ -33,7 +33,8 @@ function getAllegiances() {
 }
 
 function valideForm(){
-    if($_FILES['image']['type'] === 'image/png'){
+    $allowedExtension = ['image/png','image/png','image/gif'];
+    if(in_array($_FILES['image']['type'],$allowedExtension)){
         if($_FILES['image']['size'] < 800000){
             $extension = explode('/', $_FILES['image']['type'])[1];
             $imageUrl = uniqid().'.'.$extension;
@@ -44,7 +45,7 @@ function valideForm(){
         }
     }    
     else {
-        $errors[] = 'J\'accepte que les fichiers png';
+        $errors[] = 'J\'accepte que les fichiers png, jpg, gif';
     }
     if(empty($_POST['name'])){
         $errors[] = 'Veuillez saisir le nom de la planète';

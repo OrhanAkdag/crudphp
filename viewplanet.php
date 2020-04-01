@@ -40,7 +40,7 @@ require_once 'pdo_connect.php';
                             alt="Image de la planète <?php echo($data['name']); ?>"/>
                     </td>
                     <td>
-                        <a title="Voir le détail" href="planet-detail.php?id=<?php echo($data['id']); ?>">
+                        <a title="Voir le détail" href="planetdetail.php?id=<?php echo($data['id']); ?>">
                             <i class="fa fa-eye text-primary mx-2"></i>
                         </a>
 

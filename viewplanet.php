@@ -44,11 +44,11 @@ require_once 'pdo_connect.php';
                             <i class="fa fa-eye text-primary mx-2"></i>
                         </a>
 
-                        <a title="Editer" href="edit-planet.php?id=<?php echo($data['id']); ?>">
+                        <a title="Editer" href="editplanet.php?id=<?php echo($data['id']); ?>">
                             <i class="fa fa-edit text-warning mx-2"></i>
                         </a>
 
-                        <a title="Supprimer" href="http://www.google.fr">
+                        <a title="Supprimer" href="deleteplanet.php?id=<?php echo($data['id']);?>">
                             <i class="fa fa-trash text-danger mx-2"></i>
                         </a>
                     </td>
